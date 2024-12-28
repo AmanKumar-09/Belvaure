@@ -1,11 +1,11 @@
 import React from 'react'
 
+
 function Footer() {
   return (
     <div>
       
-      <h1>Hello Pourush </h1> 
-      <h1> pourush</h1>
+      <h1 className='bg-black-600 text-3xl'>Aman is Here </h1> 
 
     </div>
   )

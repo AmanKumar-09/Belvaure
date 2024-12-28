@@ -16,6 +16,36 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
+
+const links = [
+  {
+      name:"MEN",
+      route:""
+  },
+  {
+      name:"WOMEN",
+      route:""
+  },
+  {
+      name:"KIDS",
+      route:""
+  },
+  {
+      name:"HOME & Living",
+      route:""
+  },
+  {
+      name:"BEAUTY",
+      route:""
+  },
+  {
+      name:"STUDIO",
+      route:""
+  },
+
+]
+
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -40,6 +70,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -51,7 +82,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
+      width: '60ch',
+      backgroundColor:'lightgray',
+      borderRadius: '10px',
+      color: 'black'
     },
   },
 }));
@@ -155,17 +189,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   );
 
   return (
+    <>
     <Box sx={{ flexGrow: 1 }}>
+<<<<<<< HEAD
       <AppBar position="static"
       // sx={{backgroundColor:"white"}}
       >
+=======
+      <AppBar position="static" sx={{ backgroundColor: 'white', height: '100px', display:'flex', justifyContent: 'center',   }}>
+>>>>>>> b535546c1e0469eae4adbb403e86b666b79187c7
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2 , color:'black'}}
           >
             <MenuIcon />
           </IconButton>
@@ -177,26 +216,47 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             variant="h6"
             noWrap
             component="div"
+<<<<<<< HEAD
             sx={{ display: { xs: 'none', sm: 'block' } }}
          onClick={()=>{
              console.log("pourushj")
          }}
          >
             Pourush
+=======
+            sx={{ display: { xs: 'none', sm: 'block', color:'black' } }}
+          >
+            
+            <div className='  flex gap-3 '>
+          {
+            links.map((link,index) =>{
+                return <div  key={index}>{link.name}</div>
+            })
+          }
+
+        </div>
+>>>>>>> b535546c1e0469eae4adbb403e86b666b79187c7
           </Typography>
-          <Search>
+          <Search
+          // sx={{ color:'black', backgroundColor: 'lightgray', border: '1px'  }}
+          >
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+            // sx={{ color:'black', backgroundColor: 'gray', border: '1px'  }}
+              placeholder="Search here"
               inputProps={{ 'aria-label': 'search' }}
+              
+              
             />
+            
+
           </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1 , color:'black',   }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex', color:'black',  } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={6} color="error">
                 <MailIcon />
               </Badge>
             </IconButton>
@@ -205,7 +265,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={9} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -221,7 +281,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none', color:'black' } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -238,6 +298,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       {renderMobileMenu}
       {renderMenu}
     </Box>
+
+<a  onClick={()=> console.log('hello')} > aman </a>
+</>
+
   );
 }
 
