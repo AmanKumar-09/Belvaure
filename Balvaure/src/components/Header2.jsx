@@ -156,7 +156,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static"
+      // sx={{backgroundColor:"white"}}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -167,13 +169,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           >
             <MenuIcon />
           </IconButton>
+         
+         
+         
           <Typography
+          className='ml-2'
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
+         onClick={()=>{
+             console.log("pourushj")
+         }}
+         >
+            Pourush
           </Typography>
           <Search>
             <SearchIconWrapper>
