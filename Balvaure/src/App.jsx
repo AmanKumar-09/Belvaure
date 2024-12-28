@@ -1,15 +1,17 @@
 import { useState } from 'react'
 
 import './App.css'
-import Header2 from './components/Header2.jsx'
+import Header from './components/Header.jsx'
 import Footer from './components/Footer'
+import Carousel from './components/Crousel.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-    <Header2/>
+    <Header/>
+    <Carousel/>
     <Footer/>
       
     </>
