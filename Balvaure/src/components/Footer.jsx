@@ -5,7 +5,7 @@ function Footer() {
     <div>
       
       <h1>Hello Pourush </h1> 
-      <h1> aman</h1>
+      <h1> pourush</h1>
 
     </div>
   )
