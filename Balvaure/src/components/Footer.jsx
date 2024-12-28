@@ -5,10 +5,7 @@ function Footer() {
   return (
     <div>
       
-     <h1>I'm Aman</h1>
-     <a>aman</a>
-     <a  onClick={()=> console.log('hello')} > pourush </a>
-
+      <h1 className='bg-black-600 text-3xl'>Aman is Here </h1> 
 
     </div>
   )
