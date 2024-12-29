@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div>
       
-      <h1 className='bg-black-600 text-3xl'>Aman is Here </h1> 
+      <h1 className='bg-black-600 text-3xl'>footer </h1> 
 
     </div>
   )
