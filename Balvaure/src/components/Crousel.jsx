@@ -14,10 +14,10 @@ function Carousel() {
           <img src={crousel1} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item">
-          <img src={crousel2} className="d-block w-100" alt="..." />
+          <img src={crousel3} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item">
-          <img src={crousel3} className="d-block w-100" alt="..." />
+          <img src={crousel2} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item">
           <img src={crousel4} className="d-block w-100" alt="..." />
