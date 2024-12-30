@@ -42,9 +42,12 @@ function Footer() {
        </div>
       </div>
       {/* experiencesection */}
-      <div>
-         <h5 className='w-full text-center p-4 font-bold text-gray-600'> <div><IoIosPhonePortrait /> EXPERIENCE BELVAURE APP</div></h5>
+      <div className='w-full  text-center'>
+         <h5 className=' p-3  m-auto   font-bold text-gray-600 flex items-center justify-center'>
+           <IoIosPhonePortrait />
+            EXPERIENCE BELVAURE APP</h5>
       </div>
+     
 
     </div>
     </>
