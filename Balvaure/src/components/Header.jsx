@@ -3,33 +3,34 @@ import { NavLink } from 'react-router-dom'
 import { FaUser } from "react-icons/fa";import { CiHeart } from "react-icons/ci";
 import { TiShoppingBag } from "react-icons/ti";
 import logo from "../assets/logo2.jpg"
+
 import '../App.jsx';
 function Header() {
  
     const links = [
         {
             name:"MEN",
-            route:""
+            route:"/Men"
         },
         {
             name:"WOMEN",
-            route:""
+            route:"/Women"
         },
         {
             name:"KIDS",
-            route:""
+            route:"/Kids"
         },
         {
             name:"HOME & Living",
-            route:""
+            route:"/Home&living"
         },
         {
             name:"BEAUTY",
-            route:""
+            route:"/Beauty"
         },
         {
             name:"STUDIO",
-            route:""
+            route:"/Studio"
         },
 
     ]
@@ -57,13 +58,19 @@ function Header() {
     <div className='   gap-2 h-[100px]  w-full shadow-lg  ' >
           <div className='md:p-3  md:flex-row flex overflow-hidden items-center  h-full w-full'>
             <div className='flex '>
-        <div className=' md:p-3'>
+                <NavLink to={"/"}> <div className=' md:p-3'>
             <img className='w-[150px] h-[100%]' src={logo} alt="logo" />
-        </div>
+        </div></NavLink>
+       
         <div className='md:ml-3 hidden md:flex   gap-8 md:p-4'>
           {
             links.map((link,index) =>{
-                return <div  key={index}>{link.name}</div>
+                return <NavLink
+                 className={({ isActive }) => 
+                    isActive ? "text-black no-underline" : "text-black no-underline" 
+                  } to={link.route} key={index}>
+                    {link.name}
+                    </NavLink>
             })
           }
 
