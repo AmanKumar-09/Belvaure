@@ -10,6 +10,9 @@ import Homeandliving from './components/Homeandliving.jsx'
 import Beauty from './components/Beauty.jsx'
 import Studio from './components/Studio.jsx'
 import Frontpage from './components/Frontpage.jsx'
+import Login from './components/Login.jsx'
+import Bag from './components/Bag.jsx'
+import Wishlist from './components/Wishlist.jsx'
 
 const router = createBrowserRouter([
     {
@@ -19,6 +22,18 @@ const router = createBrowserRouter([
         {
           path:'/',
           element:<Frontpage/>
+       },
+       {
+           path:'/login',
+           element:<Login/>
+       },
+       {
+         path:"/bag",
+         element:<Bag/>
+       },
+       {
+           path:'/wishlist',
+           element:<Wishlist/>
        },
         {
            path:'/Men',

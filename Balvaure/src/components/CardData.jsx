@@ -3,6 +3,8 @@ import tshirt from '../assets/tshirt1.jpg'
 import Card from './Card'
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+
+
 const cardData = [
   {
     id: 1,

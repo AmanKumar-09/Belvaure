@@ -39,17 +39,17 @@ function Header() {
         {
             name:"login",
             icon:<FaUser />,
-            route:""
+            route:"/login"
         },
         {
             name:"Wishlist",
             icon:<CiHeart />,
-            route:""
+            route:"/wishlist"
         },
         {
             name:"Bag",
             icon:<TiShoppingBag />,
-            route:""
+            route:"/bag"
 
         }
     ]
@@ -82,10 +82,10 @@ function Header() {
         </div>
         <div className='  md:gap-6 hidden  md:flex ml-28'>
             {links2.map((link,index) =>{
-                return <div  key={index} className='flex flex-col items-center gap-1 cursor-pointer'>
+                return <NavLink to={link.route}  key={index} className='flex flex-col text-black no-underline  items-center gap-1 cursor-pointer'>
                     <div>{link.icon}</div>
                     <span>{link.name}</span>
-                </div>
+                </NavLink>
             })}
         </div>
       </div>
