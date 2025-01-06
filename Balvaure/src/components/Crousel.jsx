@@ -8,7 +8,7 @@ import crousel4 from '../assets/crousel4.jpg';
 
 function Carousel() {
   return (
-    <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleAutoplaying" className="carousel slide  pt-[100px]" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src={crousel1} className="d-block w-100" alt="..." />

@@ -55,7 +55,7 @@ function Header() {
     ]
      
   return (
-    <div className='   gap-2 h-[100px]  w-full shadow-lg  ' >
+    <div className='   gap-2 h-[100px]  w-full shadow-lg   fixed top-0 z-50 bg-white' >
           <div className='md:p-3  md:flex-row flex overflow-hidden items-center  h-full w-full'>
             <div className='flex '>
                 <NavLink to={"/"}> <div className=' md:p-3'>

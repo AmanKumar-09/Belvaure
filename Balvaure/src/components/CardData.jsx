@@ -135,7 +135,7 @@ function CardMain() {
   return (
     <div className='relative '>
   
-  <button className='absolute top-1/2 left-0  bg-transparent text-4xl text-white p-2 rounded-full z-10'
+  <button className='absolute top-1/2 left-0  bg-transparent text-6xl text-white p-2 rounded-full z-10'
     onClick={prevslide}
   >
   <IoIosArrowBack />
@@ -143,7 +143,7 @@ function CardMain() {
  
     <div className='flex  overflow-hidden'>
       
-   <div className='flex gap-3 px-2 transition-all duration-all' style={{
+   <div className='flex gap-3 px-2 transition-transform duration-500 ease-in-out' style={{
             transform : `translateX(-${slide * 100/itemstoshow}%)`
           }}>
    {
@@ -155,7 +155,7 @@ function CardMain() {
 
 
   </div>
-  <button className='absolute top-1/2 text-4xl right-0  bg-transparent text-white p-2 rounded-full z-10'
+  <button className='absolute top-1/2 text-6xl  right-0  bg-transparent text-white font-bold  p-2 rounded-full z-10'
     onClick={nextslide}
   ><IoIosArrowForward /></button>
 
