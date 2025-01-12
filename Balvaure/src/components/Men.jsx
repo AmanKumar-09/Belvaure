@@ -2,7 +2,7 @@ import React from 'react'
 
 function Men() {
   return (
-    <div>Men</div>
+    <div className='pt-[100px]'>Men</div>
   )
 }
 

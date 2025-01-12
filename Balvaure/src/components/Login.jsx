@@ -45,11 +45,11 @@ function Login() {
 
                 <button className='p-2 w-full rounded-lg px-4 flex text-center items-center text-xl justify-center bg-black text-white '>{signin ? 'Sign IN': " Signup"}</button>
                 
-                <p className='mt-6 text-center '>{signin ? "Don't have an account?" :"Already have a account"} {' '}
+                <p className='mt-6 text-center '>{signin ? "Don't have an account?" :"Already have a account?"} {' '}
                     <button
                       onClick={signinhandle }
                     className='font-medium'>
-                        {signin? "Signin" : "Signup"}
+                        {signin? "Signup" : " Signin"}
                     </button>
                      </p>
                 </form>

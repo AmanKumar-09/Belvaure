@@ -2,7 +2,7 @@ import React from 'react'
 
 function Bag() {
   return (
-    <div>Bag</div>
+    <div className='pt-[100px]'>Bag</div>
   )
 }
 

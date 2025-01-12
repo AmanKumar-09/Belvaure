@@ -2,7 +2,7 @@ import React from 'react'
 
 function Kids() {
   return (
-    <div>Kids</div>
+    <div className='pt-[100px]'>Kids</div>
   )
 }
 

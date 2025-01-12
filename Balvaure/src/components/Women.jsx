@@ -2,7 +2,7 @@ import React from 'react'
 
 function Women() {
   return (
-    <div>Women</div>
+    <div className='pt-[100px]'>Women</div>
   )
 }
 

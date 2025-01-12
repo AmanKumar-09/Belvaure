@@ -2,7 +2,7 @@ import React from 'react'
 
 function Homeandliving() {
   return (
-    <div>Home&living</div>
+    <div className='pt-[100px]'>Home&living</div>
   )
 }
 

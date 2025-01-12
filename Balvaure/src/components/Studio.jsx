@@ -2,7 +2,7 @@ import React from 'react'
 
 function Studio() {
   return (
-    <div>Studio</div>
+    <div className='pt-[100px]'>Studio</div>
   )
 }
 
