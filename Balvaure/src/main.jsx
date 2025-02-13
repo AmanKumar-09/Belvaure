@@ -13,6 +13,7 @@ import Frontpage from './components/Frontpage.jsx'
 import Login from './components/Login.jsx'
 import Bag from './components/Bag.jsx'
 import Wishlist from './components/Wishlist.jsx'
+import Card2 from './components/card2.jsx'
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         {
           path:'/Studio',
           element:<Studio/>
+        },
+        {
+          path:'/Men2',
+          element:<Card2/>
         }
       ]
 

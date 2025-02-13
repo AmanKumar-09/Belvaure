@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 const Card = (
     {
         vendor,
@@ -12,7 +12,7 @@ const Card = (
 ) => {
     return (
         <>
-            <div>
+            <NavLink to="/Men2">
                 <div className=' mt-5 border border-gray-800 rounded-md  md:h-[480px] w-44 sm:w-56 md:w-72'>
                     <div>
                         <img className='md:h-[390px] w-full h-full md:w-72' src={image} alt="polo t-shirt" />
@@ -28,7 +28,7 @@ const Card = (
                         
                     </div>
                 </div>
-            </div>
+            </NavLink>
         </>
     )
 }
