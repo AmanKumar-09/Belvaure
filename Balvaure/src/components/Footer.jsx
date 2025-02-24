@@ -10,7 +10,7 @@ function Footer() {
       <div className='w-full pt-4'>
       <div className="grid grid-cols-2 md:grid-cols-4 w-[80%] m-auto gap-8">
        <div>
-          <h4 className='font-bold text-red-500'>NEED HELP</h4>
+          <h4 className='font-bold text-red-500'>NEaD HELP</h4>
           <p className='font-bold text-gray-600'>Contact Us</p>
           <p className='font-bold text-gray-600'>Track Order</p>
           <p className='font-bold text-gray-600'>Returns & Refunds</p>
