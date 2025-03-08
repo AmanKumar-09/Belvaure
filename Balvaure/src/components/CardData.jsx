@@ -1,168 +1,72 @@
-import React, { useRef, useState } from 'react'
-import tshirt from '../assets/tshirt1.jpg'
-import Card from './Card'
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import React, { useEffect, useState } from 'react';
+import bkoof from '../assets/bkoof.jpg';
+import Card from './Card';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-
-const cardData = [
-  {
-    id: 1,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 2,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 3,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 4,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 5,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 6,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 7,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 8,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 9,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 10,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 11,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-  {
-    id: 12,
-    vendor: "Belvaure",
-    image: tshirt,
-    description: "Oversized Classsic T-Shirt",
-    Price: 899,
-    originalPrice : 999,
-    offer: "40%"
-  },
-]
-
-
-
+const cardData = Array.from({ length: 13 }, (_, i) => ({
+  id: i + 1,
+  vendor: "Belvaure",
+  image: bkoof,
+  description: "Oversized Classic T-Shirt",
+  price: 899,
+  originalPrice: 999,
+  offer: "40%"
+}));
 
 function CardMain() {
-  
-  const itemstoshow = 3;
-  const [slide,setslide] = useState(0);
+  const itemstoshow = 5;
+  const totalSlides = Math.ceil(cardData.length / itemstoshow);
+  const [slide, setSlide] = useState(0);
 
-  const nextslide = () =>{
-    setslide(prevSlide => (prevSlide + 1) % Math.ceil(cardData.length / itemstoshow));
-  }
+  // Auto-scroll logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlide(prevSlide => (prevSlide + 1) % totalSlides);
+    }, 3000); // Change slide every 3 seconds
 
-  const prevslide = () =>{
-    setslide(prevSlide => (prevSlide - 1 + Math.ceil(cardData.length / itemstoshow)) % Math.ceil(cardData.length / itemstoshow));
-  }
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
+  const nextSlide = () => setSlide(prevSlide => (prevSlide + 1) % totalSlides);
+  const prevSlide = () => setSlide(prevSlide => (prevSlide - 1 + totalSlides) % totalSlides);
 
   return (
-    <div className='relative '>
-  
-  <button className='absolute top-1/2 left-0  bg-transparent text-6xl text-white p-2 rounded-full z-10'
-    onClick={prevslide}
-  >
-  <IoIosArrowBack />
-  </button>
- 
-    <div className='flex  overflow-hidden'>
-      
-   <div className='flex gap-3 px-2 transition-transform duration-500 ease-in-out' style={{
-            transform : `translateX(-${slide * 100/itemstoshow}%)`
-          }}>
-   {
-        cardData.map(( data) =>(
-          <Card  key={data.id} {...data} />
-        ))
-      }
-   </div>
+    <div className="relative mx-4 overflow-hidden">
+      {/* Left Button */}
+      <button className="absolute top-1/2 left-0 bg-transparent text-6xl text-white p-2 rounded-full z-10"
+        onClick={prevSlide}
+      >
+        <IoIosArrowBack />
+      </button>
 
+      {/* Scrollable Cards */}
+      <div className="flex overflow-hidden scrollbar-hide">
+        <div 
+          className="flex gap-3 px-2 transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(calc(-${slide * 100 / totalSlides}% - 0.5rem))` }} // Adjusting for margin
+        >
+          {cardData.map(data => <Card key={data.id} {...data} />)}
+        </div>
+      </div>
 
-  </div>
-  <button className='absolute top-1/2 text-6xl  right-0  bg-transparent text-white font-bold  p-2 rounded-full z-10'
-    onClick={nextslide}
-  ><IoIosArrowForward /></button>
+      {/* Right Button */}
+      <button className="absolute top-1/2 text-6xl right-0 bg-transparent text-white font-bold p-2 rounded-full z-10"
+        onClick={nextSlide}
+      >
+        <IoIosArrowForward />
+      </button>
 
-     
-        
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+      `}</style>
     </div>
-  )
+  );
 }
 
 export default CardMain;
